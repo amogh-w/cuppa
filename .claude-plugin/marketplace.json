@@ -7,7 +7,7 @@
     {
       "name": "cuppa",
       "source": "./",
-      "description": "cuppa-ui kit plus the harness for the phone-remote projects (sync, checks, shared code)."
+      "description": "cuppa-ui kit plus a harness that syncs, lints and checks the kit and shared code across your projects."
     }
   ]
 }

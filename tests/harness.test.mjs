@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync, existsSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { KIT_MASTERS, inspect, init, kitVersion, readRegion, sync } from "../scripts/harness.mjs";
+import { KIT_MASTERS, inspect, init, kitVersion, loadProjects, readRegion, sync } from "../scripts/harness.mjs";
 
 let dir, root, proj, project;
 
@@ -74,6 +74,10 @@ test("a missing project folder is an error, not a silent pass", () => {
   const r = sync([gone], { root });
   assert.equal(r.drift, 1);
   assert.match(r.lines[0], /project folder not found/);
+});
+
+test("a missing harness.json says how to create one", () => {
+  assert.throws(() => loadProjects(join(dir, "nowhere")), /Copy harness\.example\.json to harness\.json/);
 });
 
 test("init scaffolds the gates, fills the name and never overwrites without force", () => {

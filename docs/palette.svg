@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-label="The four Catppuccin flavors and the accent colors the kit offers">
+  <style>text{font-family:system-ui,Segoe UI,Helvetica,Arial,sans-serif}</style>
+  <!-- flavors: page, card, control, text -->
+  <g>
+    <rect x="0" y="0" width="1200" height="330" rx="20" fill="#11111b"/>
+    <g font-size="15" font-weight="600" fill="#a6adc8"><text x="32" y="38">FLAVORS</text><text x="640" y="38">ACCENTS</text></g>
+
+    <!-- Latte -->
+    <rect x="32" y="56" width="132" height="116" rx="14" fill="#eff1f5"/>
+    <rect x="44" y="68" width="108" height="48" rx="10" fill="#e6e9ef"/><rect x="56" y="80" width="54" height="24" rx="8" fill="#ccd0da"/>
+    <text x="48" y="146" font-size="16" font-weight="700" fill="#4c4f69">Latte</text><circle cx="140" cy="140" r="7" fill="#7287fd"/>
+    <!-- Frappe -->
+    <rect x="178" y="56" width="132" height="116" rx="14" fill="#303446"/>
+    <rect x="190" y="68" width="108" height="48" rx="10" fill="#292c3c"/><rect x="202" y="80" width="54" height="24" rx="8" fill="#414559"/>
+    <text x="194" y="146" font-size="16" font-weight="700" fill="#c6d0f5">Frappe</text><circle cx="286" cy="140" r="7" fill="#babbf1"/>
+    <!-- Macchiato -->
+    <rect x="324" y="56" width="132" height="116" rx="14" fill="#24273a"/>
+    <rect x="336" y="68" width="108" height="48" rx="10" fill="#1e2030"/><rect x="348" y="80" width="54" height="24" rx="8" fill="#363a4f"/>
+    <text x="340" y="146" font-size="16" font-weight="700" fill="#cad3f5">Macchiato</text><circle cx="432" cy="140" r="7" fill="#b7bdf8"/>
+    <!-- Mocha -->
+    <rect x="470" y="56" width="132" height="116" rx="14" fill="#1e1e2e"/>
+    <rect x="482" y="68" width="108" height="48" rx="10" fill="#181825"/><rect x="494" y="80" width="54" height="24" rx="8" fill="#313244"/>
+    <text x="486" y="146" font-size="16" font-weight="700" fill="#cdd6f4">Mocha</text><circle cx="578" cy="140" r="7" fill="#b4befe"/>
+
+    <!-- accents (Mocha values) -->
+    <g>
+      <circle cx="660" cy="92" r="22" fill="#b4befe"/><circle cx="716" cy="92" r="22" fill="#cba6f7"/><circle cx="772" cy="92" r="22" fill="#89b4fa"/>
+      <circle cx="828" cy="92" r="22" fill="#74c7ec"/><circle cx="884" cy="92" r="22" fill="#94e2d5"/><circle cx="940" cy="92" r="22" fill="#a6e3a1"/>
+      <circle cx="996" cy="92" r="22" fill="#f9e2af"/><circle cx="1052" cy="92" r="22" fill="#fab387"/><circle cx="1108" cy="92" r="22" fill="#f5c2e7"/>
+      <circle cx="660" cy="148" r="22" fill="#f38ba8"/>
+      <circle cx="660" cy="92" r="28" fill="none" stroke="#cdd6f4" stroke-width="3"/>
+    </g>
+    <text x="700" y="160" font-size="15" fill="#a6adc8">Lavender is the default accent. The ring marks it.</text>
+
+    <!-- layers -->
+    <g font-size="15" font-weight="600" fill="#a6adc8"><text x="32" y="222">SURFACE LAYERS (MOCHA)</text></g>
+    <rect x="32" y="238" width="1136" height="64" rx="14" fill="#181825"/>
+    <rect x="48" y="250" width="1104" height="40" rx="10" fill="#1e1e2e"/>
+    <rect x="64" y="258" width="300" height="24" rx="8" fill="#313244"/>
+    <g font-size="14" fill="#cdd6f4"><text x="76" y="275">control: surface0</text><text x="400" y="275">card and grouped list: base</text><text x="760" y="275">page: mantle</text></g>
+  </g>
+</svg>

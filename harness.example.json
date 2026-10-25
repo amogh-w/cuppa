@@ -1,0 +1,22 @@
+{
+  "_about": "Copy this file to harness.json (which is git-ignored) and list your own projects. root is the project folder (absolute). kit.dir is where the project keeps its copy of the cuppa-ui kit; kit.files picks which kit files it uses. shared (optional) maps a file in this repo's shared/ folder to its place in the project. check is the project's quality-gate script. ui (optional) configures `lint`: sources are the project's own markup, script and stylesheet files (never the vendored kit or generated css), icons is its icons.txt, prefix its storage-key prefix, themeRef the file that must load the kit's theme.js, legacyKeys old storage keys kept only so they can be migrated. regions (optional) maps a shared snippet to a project file that holds it between <!-- cuppa:NAME:start --> and <!-- cuppa:NAME:end --> comments.",
+  "projects": [
+    {
+      "id": "my-app",
+      "name": "My App",
+      "root": "C:/path/to/my-app",
+      "kit": {
+        "dir": "web/ui",
+        "files": ["kit.css", "palette.css", "ui.js", "icons.mjs", "theme.js"]
+      },
+      "shared": {},
+      "check": "scripts/check.ps1",
+      "ui": {
+        "sources": ["web/index.html", "web/app.js", "web/app.src.css"],
+        "icons": "web/ui/icons.txt",
+        "prefix": "app",
+        "themeRef": { "file": "web/index.html", "needle": "theme.js" }
+      }
+    }
+  ]
+}

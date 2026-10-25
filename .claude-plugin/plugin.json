@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "cuppa",
-  "description": "Personal harness for the phone-remote projects: the cuppa-ui kit (Tailwind v4 + Catppuccin), shared Rust and JS code, sync and check tooling.",
+  "description": "One look and shared code for every app: the cuppa-ui kit (Tailwind v4 + Catppuccin) plus a harness that syncs, lints and checks the kit and shared code across your projects.",
   "version": "0.3.1",
   "author": { "name": "Amogh" },
   "keywords": ["cuppa-ui", "catppuccin", "tailwind", "harness", "rust", "pwa"]

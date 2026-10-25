@@ -35,7 +35,11 @@ const norm = (p) => readFileSync(p, "utf8").replace(/\r\n/g, "\n");
 const sha = (s) => createHash("sha256").update(s).digest("hex").slice(0, 12);
 
 export function loadProjects(root = PLUGIN_ROOT) {
-  const projects = JSON.parse(readFileSync(join(root, "harness.json"), "utf8")).projects;
+  const file = join(root, "harness.json");
+  if (!existsSync(file)) {
+    throw new Error(`No harness.json in ${root}. Copy harness.example.json to harness.json and list your projects.`);
+  }
+  const projects = JSON.parse(readFileSync(file, "utf8")).projects;
   for (const p of projects) p.root = resolve(p.root);
   return projects;
 }
