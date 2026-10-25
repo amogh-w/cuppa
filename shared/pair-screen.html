@@ -1,0 +1,14 @@
+<!-- The phone's pairing screen. Shared by OpenRemote and Kai Remote: edit it in the cuppa plugin repo (shared/) and
+     run harness.mjs sync --write, never in a project copy. Driven by pair-client.js. -->
+<div id="pair" class="fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-mantle p-6" hidden>
+  <div class="flex w-full max-w-[360px] flex-col items-center gap-3 text-center">
+    <span class="grid size-16 place-items-center rounded-full bg-accent/15 text-accent"><svg class="size-8"><use href="#lock"/></svg></span>
+    <h2 class="t-title2">Pair this phone</h2>
+    <p class="t-sub text-subtext1">On the PC, open the dashboard from the tray icon and choose <b>Add a device</b>. Type the 6-digit code here, or open the pairing link on this phone.</p>
+    <form id="pairform" class="flex w-full gap-2.5" autocomplete="off">
+      <input class="field flex-1 text-center text-xl tracking-[0.2em]" id="paircode" inputmode="numeric" pattern="[0-9 ]*" maxlength="7" placeholder="000 000" autocomplete="one-time-code" aria-label="6-digit code">
+      <button class="btn btn-filled" type="submit">Pair</button>
+    </form>
+    <p class="t-foot text-subtext0" id="pairmsg" role="status"></p>
+  </div>
+</div>

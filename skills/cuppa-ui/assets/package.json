@@ -1,0 +1,16 @@
+{
+  "name": "cuppa-ui-assets",
+  "private": true,
+  "description": "Build + preview for the cuppa-ui skill. Not an app: init.mjs copies the kit into your project.",
+  "scripts": {
+    "icons": "node scripts/icons.mjs --list icons.txt --out icons.svg",
+    "css": "tailwindcss -i src/preview.css -o app.css --minify",
+    "build": "npm run icons && npm run css",
+    "preview": "python -m http.server 8800 --bind 127.0.0.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.11",
+    "lucide-static": "0.540.0",
+    "tailwindcss": "4.1.11"
+  }
+}

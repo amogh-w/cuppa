@@ -1,0 +1,4 @@
+@import "./kit.css";
+@source "../gallery";
+/* The gallery builds swatch classes from a list (bg-${accent}), which Tailwind cannot detect; safelist them. */
+@source inline("bg-{rosewater,flamingo,pink,mauve,red,peach,yellow,green,teal,sky,blue,lavender}");

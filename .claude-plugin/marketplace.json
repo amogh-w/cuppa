@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace-manifest.json",
+  "name": "cuppa",
+  "owner": { "name": "Amogh" },
+  "description": "Local marketplace for the cuppa plugin.",
+  "plugins": [
+    {
+      "name": "cuppa",
+      "source": "./",
+      "description": "cuppa-ui kit plus the harness for the phone-remote projects (sync, checks, shared code)."
+    }
+  ]
+}

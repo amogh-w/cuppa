@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en" class="mocha">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UI Gallery</title>
+<link rel="stylesheet" href="../app.css">
+<script src="../theme.js"></script>
+</head>
+<body class="pb-28">
+
+<!-- ================= Gallery chrome (not part of the kit) ================= -->
+<header class="sticky top-0 z-30 border-b border-surface0 bg-mantle/95 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-5xl items-center gap-3 px-4 py-3">
+    <div class="min-w-0 flex-1"><div class="t-headline">UI Gallery</div><div class="t-foot text-subtext0">Every component and variant in the kit.</div></div>
+    <button id="themeBtn" class="btn btn-gray btn-icon" aria-label="Theme"><i data-i="sliders-horizontal" class="size-5"></i></button>
+  </div>
+  <div id="themePanel" hidden class="border-t border-surface0">
+    <div class="mx-auto grid max-w-5xl gap-4 px-4 py-4 sm:grid-cols-3">
+      <div><div class="t-foot mb-2 text-subtext0">Flavor</div><div class="flex flex-wrap gap-2">
+        <button class="chip" data-flavor="auto">Auto</button><button class="chip" data-flavor="latte">Latte</button><button class="chip" data-flavor="frappe">Frappé</button><button class="chip" data-flavor="macchiato">Macchiato</button><button class="chip" data-flavor="mocha">Mocha</button></div></div>
+      <div><div class="t-foot mb-2 text-subtext0">Corner radius</div><div class="flex gap-2">
+        <button class="chip" data-radius="tight">Tight</button><button class="chip" data-radius="apple">Apple</button><button class="chip" data-radius="soft">Soft</button></div></div>
+      <div><div class="t-foot mb-2 text-subtext0">Accent</div><div id="swatches" class="grid w-max grid-cols-6 gap-3"></div></div>
+    </div>
+  </div>
+  <nav id="secnav" class="mx-auto flex max-w-5xl gap-2 overflow-x-auto px-4 pb-3 [scrollbar-width:none]"></nav>
+</header>
+
+<main class="mx-auto max-w-5xl space-y-14 px-4 pt-8">
+
+<!-- ================= FOUNDATIONS ================= -->
+<section id="foundations" data-title="Foundations">
+  <h2 class="t-title1">Foundations</h2>
+  <p class="t-sub mt-1 text-subtext0">Switch flavor, radius and accent in the panel above.</p>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="card space-y-1.5">
+      <div class="t-large">Large title</div><div class="t-title1">Title 1 · 28 bold</div><div class="t-title2">Title 2 · 22 semibold</div><div class="t-title3">Title 3 · 20 semibold</div>
+      <div class="t-headline">Headline · 17 semibold</div><div class="t-body">Body · 17 regular. The quick brown fox jumps over the lazy dog.</div>
+      <div class="t-sub text-subtext1">Subhead · 15 secondary text</div><div class="t-foot text-subtext0">Footnote · 13</div><div class="t-cap text-overlay1">Caption · 12</div>
+      <div class="t-cap pt-2 text-overlay1">System font stack (SF Pro on Apple devices, Segoe UI on Windows). Nothing downloaded.</div>
+    </div>
+    <div class="card">
+      <div class="t-foot mb-3 text-subtext0">Surface layers (page → card → control → raised)</div>
+      <div class="rounded-card bg-mantle p-3"><div class="t-foot text-subtext0">mantle · page</div>
+        <div class="mt-2 rounded-card bg-base p-3 outline outline-surface0"><div class="t-foot text-subtext0">base · card</div>
+          <div class="mt-2 rounded-ctl bg-surface0 p-3"><div class="t-foot text-subtext1">surface0 · control</div>
+            <div class="mt-2 rounded-lg bg-surface1 p-2.5"><div class="t-foot text-text">surface1 · pressed / raised</div></div></div></div></div>
+      <div class="t-foot mt-4 mb-2 text-subtext0">Semantic colors</div>
+      <div class="grid grid-cols-5 gap-2 text-center t-cap font-semibold text-crust">
+        <div class="rounded-ctl bg-accent py-3">accent</div><div class="rounded-ctl bg-green py-3">success</div><div class="rounded-ctl bg-yellow py-3">warning</div><div class="rounded-ctl bg-red py-3">danger</div><div class="rounded-ctl bg-blue py-3">info</div></div>
+      <div class="t-foot mt-4 mb-2 text-subtext0">Radius scale (follows the Corner radius control)</div>
+      <div class="flex items-end gap-3 text-center t-cap text-subtext0">
+        <div><div class="size-14 rounded-ctl bg-surface1"></div>ctl</div><div><div class="size-14 rounded-card bg-surface1"></div>card</div><div><div class="size-14 rounded-sheet bg-surface1"></div>sheet</div><div><div class="size-14 rounded-full bg-surface1"></div>full</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUTTONS ================= -->
+<section id="buttons" data-title="Buttons">
+  <h2 class="t-title1">Buttons</h2>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="variant" data-name="Styles: filled / tinted / gray / outline / plain / danger">
+      <div class="flex flex-wrap gap-3">
+        <button class="btn btn-filled">Continue</button><button class="btn btn-tinted">Tinted</button>
+        <button class="btn btn-gray">Gray</button><button class="btn btn-outline">Outline</button>
+        <button class="btn btn-plain">Plain</button><button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger-tinted">Delete</button><button class="btn btn-filled" disabled>Disabled</button>
+      </div></div>
+    <div class="variant" data-name="Sizes and full-width">
+      <div class="space-y-3">
+        <div class="flex flex-wrap items-center gap-3"><button class="btn btn-sm btn-filled">Small</button><button class="btn btn-filled">Medium</button><button class="btn btn-lg btn-filled">Large</button></div>
+        <button class="btn btn-lg btn-block btn-filled">Full-width primary</button>
+        <button class="btn btn-block btn-gray">Full-width secondary</button>
+      </div></div>
+    <div class="variant" data-name="Icon buttons, icon + label, loading">
+      <div class="flex flex-wrap items-center gap-3">
+        <button class="btn btn-icon btn-gray" aria-label="Share"><i data-i="share" class="size-5"></i></button>
+        <button class="btn btn-icon btn-filled" aria-label="Add"><i data-i="plus" class="size-5"></i></button>
+        <button class="btn btn-icon btn-tinted" aria-label="Like"><i data-i="heart" class="size-5"></i></button>
+        <button class="btn btn-tinted"><i data-i="download" class="size-4"></i>Download</button>
+        <button class="btn btn-filled" data-loading><span data-label>Tap: loading</span></button>
+      </div></div>
+  </div>
+</section>
+
+<!-- ================= INPUTS ================= -->
+<section id="inputs" data-title="Inputs">
+  <h2 class="t-title1">Inputs</h2>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="variant" data-name="Filled (iOS)">
+      <div class="space-y-3"><input class="field" placeholder="Email"><input class="field" type="password" placeholder="Password">
+        <div class="relative"><i data-i="search" class="pointer-events-none absolute top-3 left-3 size-5 text-overlay1"></i><input class="field rounded-full pl-10" placeholder="Search"></div>
+        <textarea class="field" placeholder="Message"></textarea></div></div>
+    <div class="variant" data-name="Outlined">
+      <div class="space-y-3"><input class="field field-outline" placeholder="Full name"><input class="field field-outline" placeholder="Company">
+        <div class="relative"><select class="field field-outline"><option>Choose a size</option><option>Small</option><option>Large</option></select><i data-i="chevron-down" class="pointer-events-none absolute top-3 right-3 size-5 text-overlay1"></i></div>
+        <textarea class="field field-outline" placeholder="Message"></textarea></div></div>
+    <div class="variant" data-name="Underline + inline label rows">
+      <div class="space-y-3"><input class="field field-underline" placeholder="Phone"><input class="field field-underline" placeholder="City">
+        <div class="group-list border border-surface0"><label class="row row-plain"><span class="w-24 text-subtext1">Name</span><input class="w-full bg-transparent outline-none placeholder:text-overlay1" placeholder="Required"></label>
+          <label class="row row-plain"><span class="w-24 text-subtext1">Email</span><input class="w-full bg-transparent outline-none placeholder:text-overlay1" placeholder="you@mail.com"></label></div></div></div>
+    <div class="variant" data-name="Validation states">
+      <div class="space-y-3">
+        <div><input class="field ring-2 ring-red/70" value="not-an-email"><div class="t-foot mt-1.5 flex items-center gap-1.5 text-red"><i data-i="circle-x" class="size-4"></i>Enter a valid email</div></div>
+        <div><input class="field ring-2 ring-green/70" value="amogh@mail.com"><div class="t-foot mt-1.5 flex items-center gap-1.5 text-green"><i data-i="circle-check" class="size-4"></i>Looks good</div></div>
+        <input class="field opacity-50" value="Disabled" disabled></div></div>
+
+    <div class="variant" data-name="Switch (green and accent) + checkbox + radio">
+      <div class="space-y-4">
+        <label class="flex items-center justify-between">Wi-Fi<span class="switch"><input type="checkbox" checked></span></label>
+        <label class="flex items-center justify-between">Dark mode<span class="switch switch-accent"><input type="checkbox" checked></span></label>
+        <label class="flex items-center justify-between">Notifications<span class="switch"><input type="checkbox"></span></label>
+        <label class="flex items-center gap-3"><input class="check" type="checkbox" checked>Remember me</label>
+        <div class="flex gap-5"><label class="flex items-center gap-2"><input class="radio" type="radio" name="r1" checked>Option 1</label><label class="flex items-center gap-2"><input class="radio" type="radio" name="r1">Option 2</label></div>
+      </div></div>
+    <div class="variant" data-name="Slider + stepper">
+      <div class="space-y-4">
+        <div class="flex items-center gap-3"><i data-i="sun" class="size-5 text-subtext0"></i><input class="range" type="range" min="0" max="100" value="60"><i data-i="sparkles" class="size-5 text-subtext0"></i></div>
+        <div class="flex items-center gap-3"><span class="t-sub text-subtext1">Quantity</span>
+          <div class="seg" data-stepper><button data-step="-1" aria-label="Less"><i data-i="minus" class="size-4"></i></button><button data-step="1" aria-label="More"><i data-i="plus" class="size-4"></i></button></div><span class="t-headline tabular-nums" data-count>1</span></div></div></div>
+    <div class="variant" data-name="Segmented (sliding) + underline tabs + chips">
+      <div class="space-y-4">
+        <div class="seg" data-group><span class="thumb"></span><button aria-pressed="true">Day</button><button aria-pressed="false">Week</button><button aria-pressed="false">Month</button></div>
+        <div class="tabs" data-tabs><button aria-selected="true">Overview</button><button aria-selected="false">Activity</button><button aria-selected="false">Files</button></div>
+        <div class="flex flex-wrap gap-2" data-chips><button class="chip" aria-pressed="true">Action</button><button class="chip" aria-pressed="false">Drama</button><button class="chip" aria-pressed="false">Sci-Fi</button><button class="chip" aria-pressed="false">Anime</button></div></div></div>
+  </div>
+</section>
+
+<!-- ================= CARDS ================= -->
+<section id="cards" data-title="Cards & lists">
+  <h2 class="t-title1">Cards &amp; lists</h2>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="variant" data-name="Flat (no border, no shadow)">
+      <div class="card"><div class="t-headline">Flat card</div><p class="t-sub mt-1 text-subtext0">Sits on the page color. Quietest option; relies on the layer difference only.</p><button class="btn btn-sm btn-tinted mt-3">Action</button></div></div>
+    <div class="variant" data-name="Raised (hairline + shadow), tappable">
+      <div class="card card-raised card-tap"><div class="flex items-center gap-3"><div class="row-tile bg-blue"><i data-i="folder" class="size-4"></i></div><div class="min-w-0 flex-1"><div class="t-headline">Raised card</div><div class="t-sub text-subtext0">Lifts on hover, presses on tap</div></div><i data-i="chevron-right" class="size-5 text-overlay1"></i></div></div></div>
+    <div class="variant" data-name="Media card (poster + overlay)">
+      <div class="flex gap-3">
+        <div class="card-tap poster h-52 w-36 from-mauve to-blue"><div class="absolute inset-x-0 bottom-0 p-4"><div class="t-sub font-semibold text-text">Movie title</div><div class="t-cap text-subtext1">2026 · Sci-Fi</div></div></div>
+        <div class="card-tap poster h-52 w-36 from-peach to-red"><div class="absolute inset-x-0 bottom-0 p-4"><div class="t-sub font-semibold text-text">Series title</div><div class="t-cap text-subtext1">S2 · E4</div><div class="mt-3 h-1 rounded-full bg-crust/60"><div class="h-full w-2/3 rounded-full bg-accent"></div></div></div></div>
+        <div class="card-tap relative hidden h-52 w-36 overflow-hidden rounded-card bg-linear-to-br from-teal to-green sm:block"><div class="absolute inset-x-0 bottom-0 p-4"><div class="t-sub font-semibold text-text">Anime</div><div class="t-cap text-subtext1">2025 · 12 eps</div></div></div></div></div>
+    <div class="variant" data-name="Stat card + sparkline">
+      <div class="grid grid-cols-2 gap-3">
+        <div class="card"><div class="t-foot text-subtext0">Watch time</div><div class="t-title1 mt-1">42h</div><span class="badge badge-tint mt-1" style="--accent:var(--ctp-green)">+12%</span>
+          <svg viewBox="0 0 100 30" preserveAspectRatio="none" class="mt-3 h-8 w-full text-accent" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline vector-effect="non-scaling-stroke" points="0,24 14,20 28,22 42,12 56,15 70,6 84,9 100,2"/></svg></div>
+        <div class="card"><div class="t-foot text-subtext0">Storage</div><div class="t-title1 mt-1">68%</div><div class="bar bar-thick mt-3"><i style="--v:.68"></i></div><div class="t-cap mt-2 text-subtext0">136 of 200 GB</div></div></div></div>
+    <div class="variant md:col-span-2" data-name="Inset grouped list (Settings style)">
+      <div class="grid gap-4 md:grid-cols-2">
+        <div class="group-list">
+          <div class="row"><div class="row-tile bg-peach"><i data-i="plane" class="size-4"></i></div><span class="flex-1">Airplane Mode</span><span class="switch"><input type="checkbox"></span></div>
+          <div class="row"><div class="row-tile bg-blue"><i data-i="wifi" class="size-4"></i></div><span class="flex-1">Wi-Fi</span><span class="text-subtext0">Home</span><i data-i="chevron-right" class="size-4 text-overlay1"></i></div>
+          <div class="row"><div class="row-tile bg-sky"><i data-i="bluetooth" class="size-4"></i></div><span class="flex-1">Bluetooth</span><span class="text-subtext0">On</span><i data-i="chevron-right" class="size-4 text-overlay1"></i></div></div>
+        <div class="group-list">
+          <div class="row"><div class="row-tile bg-red"><i data-i="bell" class="size-4"></i></div><span class="flex-1">Notifications</span><span class="count">3</span><i data-i="chevron-right" class="size-4 text-overlay1"></i></div>
+          <div class="row"><div class="row-tile bg-mauve"><i data-i="moon" class="size-4"></i></div><span class="flex-1">Focus</span><i data-i="chevron-right" class="size-4 text-overlay1"></i></div>
+          <div class="row text-red"><div class="row-tile bg-red"><i data-i="trash-2" class="size-4"></i></div><span class="flex-1">Reset all settings</span></div></div></div></div>
+    <div class="variant md:col-span-2" data-name="Plain divided list (media rows)">
+      <div class="group-list">
+        <div class="row row-plain"><div class="avatar from-mauve to-blue">AW</div><div class="min-w-0 flex-1"><div class="t-headline">Amogh W.</div><div class="t-sub truncate text-subtext0">Sounds good, see you then!</div></div><span class="t-foot text-subtext0">9:41</span></div>
+        <div class="row row-plain"><div class="avatar from-peach to-red">KA</div><div class="min-w-0 flex-1"><div class="t-headline">Kai Remote</div><div class="t-sub truncate text-subtext0">Connected to Stremio</div></div><span class="count">2</span></div>
+        <div class="row row-plain"><div class="avatar from-teal to-green">CT</div><div class="min-w-0 flex-1"><div class="t-headline">Catppuccin</div><div class="t-sub truncate text-subtext0">New palette release</div></div><span class="t-foot text-subtext0">Mon</span></div></div></div>
+  </div>
+</section>
+
+<!-- ================= NAVIGATION ================= -->
+<section id="nav" data-title="Navigation">
+  <h2 class="t-title1">Navigation</h2>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="variant" data-name="Tab bar (bottom) + large title">
+      <div class="overflow-hidden rounded-card border border-surface0 bg-mantle"><div class="px-4 pt-4"><div class="flex items-center justify-between"><div class="t-large">Library</div><button class="btn btn-icon btn-gray btn-sm" aria-label="Add"><i data-i="plus" class="size-4"></i></button></div></div><div class="h-24"></div>
+        <div class="tabbar" data-tabs-group><button class="tab" aria-selected="true"><i data-i="house" class="size-6"></i>Home</button><button class="tab" aria-selected="false"><i data-i="compass" class="size-6"></i>Discover</button><button class="tab" aria-selected="false"><i data-i="library" class="size-6"></i>Library</button><button class="tab" aria-selected="false"><i data-i="settings" class="size-6"></i>Settings</button></div></div></div>
+    <div class="variant" data-name="Floating pill bar (icon + active label)">
+      <div class="flex h-56 flex-col justify-end overflow-hidden rounded-card border border-surface0 bg-mantle p-3"><div class="tabbar-float" data-tabs-group><button class="tabf" aria-selected="true"><i data-i="house" class="size-5"></i><span>Home</span></button><button class="tabf" aria-selected="false"><i data-i="search" class="size-5"></i><span>Search</span></button><button class="tabf" aria-selected="false"><i data-i="library" class="size-5"></i><span>Library</span></button><button class="tabf" aria-selected="false"><i data-i="user" class="size-5"></i><span>Me</span></button></div></div></div>
+    <div class="variant" data-name="Top bar with back + sidebar (desktop)">
+      <div class="grid grid-cols-[150px_1fr] overflow-hidden rounded-card border border-surface0 bg-mantle">
+        <div class="space-y-1 border-r border-surface0 p-2" data-tabs-group><button class="side-item" aria-selected="true"><i data-i="house" class="size-4"></i>Home</button><button class="side-item" aria-selected="false"><i data-i="compass" class="size-4"></i>Discover</button><button class="side-item" aria-selected="false"><i data-i="library" class="size-4"></i>Library</button><button class="side-item" aria-selected="false"><i data-i="settings" class="size-4"></i>Settings</button></div>
+        <div><div class="flex items-center border-b border-surface0 px-2 py-2"><button class="btn btn-plain btn-sm gap-0.5 px-2"><i data-i="chevron-left" class="size-5"></i>Back</button><div class="t-headline flex-1 pr-14 text-center">Title</div></div><div class="h-28"></div></div></div></div>
+    <div class="variant" data-name="Breadcrumbs, pagination, page dots">
+      <div class="space-y-4">
+        <div class="t-sub flex items-center gap-1.5 text-subtext0"><a class="text-accent">Home</a><i data-i="chevron-right" class="size-4"></i><a class="text-accent">Library</a><i data-i="chevron-right" class="size-4"></i><span class="text-text">Series</span></div>
+        <div class="flex items-center gap-1.5"><button class="btn btn-gray btn-icon btn-sm" aria-label="Prev"><i data-i="chevron-left" class="size-4"></i></button><button class="btn btn-sm btn-filled size-8 px-0">1</button><button class="btn btn-sm btn-plain size-8 px-0">2</button><button class="btn btn-sm btn-plain size-8 px-0">3</button><button class="btn btn-gray btn-icon btn-sm" aria-label="Next"><i data-i="chevron-right" class="size-4"></i></button></div>
+        <div class="flex justify-center gap-1.5"><i class="h-1.5 w-5 rounded-full bg-accent"></i><i class="size-1.5 rounded-full bg-surface2"></i><i class="size-1.5 rounded-full bg-surface2"></i><i class="size-1.5 rounded-full bg-surface2"></i></div></div></div>
+  </div>
+</section>
+
+<!-- ================= OVERLAYS ================= -->
+<section id="overlays" data-title="Overlays">
+  <h2 class="t-title1">Overlays</h2>
+  <p class="t-sub mt-1 text-subtext0">All real: tap to open. Native &lt;dialog&gt; and popover, zero libraries.</p>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="variant" data-name="Alert (iOS, centered buttons)"><button class="btn btn-gray" data-open="d-alert">Open alert</button></div>
+    <div class="variant" data-name="Form modal (centered card)"><button class="btn btn-gray" data-open="d-modal">Open modal</button></div>
+    <div class="variant" data-name="Bottom sheet (spring, grabber)"><button class="btn btn-gray" data-open="d-sheet">Open sheet</button></div>
+    <div class="variant" data-name="Action sheet"><button class="btn btn-gray" data-open="d-action">Open action sheet</button></div>
+    <div class="variant" data-name="Popover / context menu"><button class="btn btn-gray" data-menu="m1">More<i data-i="ellipsis" class="size-5"></i></button></div>
+    <div class="variant" data-name="Pills: info / success / error">
+      <div class="flex flex-wrap gap-2"><button class="btn btn-sm btn-gray" data-toast="info">Info</button><button class="btn btn-sm btn-gray" data-toast="success">Success</button><button class="btn btn-sm btn-gray" data-toast="error">Error</button></div></div>
+    <div class="variant" data-name="Tooltip (hover / focus)"><div class="flex gap-3"><button class="btn btn-icon btn-gray tip" data-tip="Share this"><i data-i="share" class="size-5"></i></button><button class="btn btn-icon btn-gray tip" data-tip="Add to library"><i data-i="bookmark" class="size-5"></i></button></div></div>
+  </div>
+</section>
+
+<!-- ================= FEEDBACK ================= -->
+<section id="feedback" data-title="Feedback">
+  <h2 class="t-title1">Feedback &amp; loaders</h2>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="variant" data-name="Badges, chips, counts">
+      <div class="flex flex-wrap items-center gap-2"><span class="badge badge-solid">New</span><span class="badge badge-tint">4K HDR</span><span class="badge badge-outline">PG-13</span><span class="count">12</span>
+        <span class="badge badge-tint" style="--accent:var(--ctp-green)"><i class="size-1.5 rounded-full bg-green"></i>Online</span><span class="badge badge-tint" style="--accent:var(--ctp-red)">Live</span></div></div>
+    <div class="variant" data-name="Tinted banners">
+      <div class="space-y-2.5">
+        <div class="alert tone-info"><i data-i="info" class="size-5 shrink-0"></i><div>New version available.</div></div>
+        <div class="alert tone-success"><i data-i="circle-check" class="size-5 shrink-0"></i><div>Saved successfully.</div></div>
+        <div class="alert tone-warn"><i data-i="triangle-alert" class="size-5 shrink-0"></i><div>Storage almost full.</div></div>
+        <div class="alert tone-danger"><i data-i="circle-x" class="size-5 shrink-0"></i><div>Could not connect.</div></div></div></div>
+    <div class="variant" data-name="Left-bar callouts">
+      <div class="space-y-2.5">
+        <div class="alert alert-bar tone-info rounded-none"><i data-i="info" class="size-5 shrink-0"></i><div><b>Note</b><div class="t-sub text-subtext1">Neutral information.</div></div></div>
+        <div class="alert alert-bar tone-warn"><i data-i="triangle-alert" class="size-5 shrink-0"></i><div><b>Heads up</b><div class="t-sub text-subtext1">Something needs attention.</div></div></div></div></div>
+    <div class="variant" data-name="Bars, ring, steps">
+      <div class="space-y-4">
+        <div class="bar"><i style="--v:.45"></i></div><div class="bar bar-thick"><i style="--v:.72"></i></div><div class="bar bar-indet"><i></i></div>
+        <div class="flex items-center gap-4"><svg viewBox="0 0 36 36" class="size-14 -rotate-90"><circle cx="18" cy="18" r="15.5" fill="none" stroke-width="3.5" class="stroke-surface1"/><circle cx="18" cy="18" r="15.5" fill="none" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="97.4" stroke-dashoffset="29" class="stroke-accent"/></svg>
+          <div class="flex flex-1 gap-1.5"><i class="h-1.5 flex-1 rounded-full bg-accent"></i><i class="h-1.5 flex-1 rounded-full bg-accent"></i><i class="h-1.5 flex-1 rounded-full bg-surface1"></i><i class="h-1.5 flex-1 rounded-full bg-surface1"></i></div></div></div></div>
+    <div class="variant" data-name="Spinners: ring / iOS spokes / dots">
+      <div class="flex items-center gap-8"><div class="spin-ring"></div>
+        <div class="spin-ios text-subtext0"><i style="--n:1"></i><i style="--n:2"></i><i style="--n:3"></i><i style="--n:4"></i><i style="--n:5"></i><i style="--n:6"></i><i style="--n:7"></i><i style="--n:8"></i><i style="--n:9"></i><i style="--n:10"></i><i style="--n:11"></i><i style="--n:12"></i></div>
+        <div class="spin-dots"><i></i><i></i><i></i></div></div></div>
+    <div class="variant" data-name="Skeleton placeholders">
+      <div class="flex gap-3"><div class="skel size-12 shrink-0 !rounded-full"></div><div class="flex-1 space-y-2.5 pt-1"><div class="skel h-3.5 w-2/3"></div><div class="skel h-3 w-full"></div><div class="skel h-3 w-4/5"></div></div></div>
+      <div class="skel mt-4 h-24 w-full !rounded-card"></div></div>
+    <div class="variant" data-name="Empty + error states">
+      <div class="grid gap-3 sm:grid-cols-2">
+        <div class="rounded-card bg-base p-5 text-center"><div class="mx-auto mb-3 grid size-14 place-items-center rounded-full bg-accent/15 text-accent"><i data-i="library" class="size-7"></i></div><div class="t-headline">Nothing here yet</div><div class="t-sub mt-1 text-subtext0">Add something to get started.</div><button class="btn btn-sm btn-filled mt-3">Add</button></div>
+        <div class="rounded-card bg-base p-5 text-center"><div class="mx-auto mb-3 grid size-14 place-items-center rounded-full bg-red/15 text-red"><i data-i="wifi" class="size-7"></i></div><div class="t-headline">Can't connect</div><div class="t-sub mt-1 text-subtext0">Check your network and retry.</div><button class="btn btn-sm btn-tinted mt-3"><i data-i="rotate-ccw" class="size-4"></i>Retry</button></div></div></div>
+  </div>
+</section>
+
+<!-- ================= DATA ================= -->
+<section id="data" data-title="Data & misc">
+  <h2 class="t-title1">Data &amp; misc</h2>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="variant" data-name="Hairline table">
+      <div class="overflow-hidden rounded-card bg-base"><table class="tbl"><thead><tr><th>Title</th><th>Quality</th><th class="text-right">Size</th></tr></thead><tbody>
+        <tr><td>Movie One</td><td><span class="badge badge-tint">4K</span></td><td class="text-right tabular-nums">12.4 GB</td></tr>
+        <tr><td>Series Two</td><td><span class="badge badge-outline">1080p</span></td><td class="text-right tabular-nums">3.1 GB</td></tr></tbody></table></div></div>
+    <div class="variant" data-name="Disclosure rows">
+      <div class="space-y-2"><details class="acc" open><summary>What is this?<i data-i="chevron-down" class="size-5 text-overlay1"></i></summary><div class="t-sub px-4 pb-4 text-subtext1">A single-purpose answer that expands smoothly.</div></details>
+        <details class="acc"><summary>Another question<i data-i="chevron-down" class="size-5 text-overlay1"></i></summary><div class="t-sub px-4 pb-4 text-subtext1">More detail here.</div></details></div></div>
+    <div class="variant" data-name="Avatars, stack, status, keys">
+      <div class="space-y-4"><div class="flex items-center gap-4">
+        <div class="avatar from-mauve to-blue">AW</div><div class="relative"><div class="avatar from-peach to-red">KA</div><i class="absolute right-0 bottom-0 size-3 rounded-full bg-green ring-2 ring-base"></i></div>
+        <div class="flex -space-x-3"><div class="avatar from-teal to-green ring-2 ring-base">A</div><div class="avatar from-pink to-mauve ring-2 ring-base">B</div><div class="avatar from-yellow to-peach ring-2 ring-base">C</div><div class="avatar bg-surface1 !bg-none text-text ring-2 ring-base">+4</div></div></div>
+        <div class="t-sub text-subtext1">Press <span class="kbd">Ctrl</span> + <span class="kbd">K</span> to search</div></div></div>
+  </div>
+</section>
+
+<!-- ================= MOTION ================= -->
+<section id="motion" data-title="Motion">
+  <h2 class="t-title1">Motion</h2>
+  <p class="t-sub mt-1 text-subtext0">One easing curve (iOS-style spring-out), two durations: 140ms for taps, 260-500ms for movement. Only transform and opacity animate. Respects reduced-motion.</p>
+  <div class="mt-5 grid gap-4 md:grid-cols-2">
+    <div class="variant" data-name="Press feedback (scale .97)">
+      <div class="flex items-center gap-3"><button class="btn btn-filled">Press me</button><div class="card card-raised card-tap !p-3 t-sub">Press me too</div></div></div>
+    <div class="variant" data-name="Pop (spring in)">
+      <div class="flex items-center gap-4"><div id="mo-pop" class="m-pop grid size-14 place-items-center rounded-card bg-accent text-crust"><i data-i="heart" class="size-6"></i></div><button class="btn btn-sm btn-gray" data-replay="mo-pop">Replay</button></div></div>
+    <div class="variant" data-name="Staggered list rise">
+      <div class="flex items-start gap-4"><div id="mo-st" class="m-stagger group-list w-48"><div class="row row-plain" style="--i:0">One</div><div class="row row-plain" style="--i:1">Two</div><div class="row row-plain" style="--i:2">Three</div></div><button class="btn btn-sm btn-gray" data-replay="mo-st">Replay</button></div></div>
+    <div class="variant" data-name="Error shake + fade-in">
+      <div class="flex items-center gap-4"><input id="mo-sh" class="field m-shake w-44" value="wrong code"><button class="btn btn-sm btn-gray" data-replay="mo-sh">Shake</button><div id="mo-fd" class="m-fade badge badge-tint">Fade</div><button class="btn btn-sm btn-gray" data-replay="mo-fd">Fade</button></div></div>
+  </div>
+</section>
+</main>
+
+<!-- ================= Dialogs / popovers / toasts (live) ================= -->
+<dialog id="d-alert" class="alert-ios"><div class="p-5 text-center"><div class="t-headline">Delete this item?</div><div class="t-foot mt-1 text-subtext1">This action can't be undone.</div></div>
+  <div class="grid grid-cols-2 border-t border-surface1/60"><button class="h-11 border-r border-surface1/60 text-[17px] text-accent" data-close>Cancel</button><button class="h-11 text-[17px] font-semibold text-red" data-close>Delete</button></div></dialog>
+<dialog id="d-modal" class="modal"><div class="p-5"><div class="flex items-center justify-between"><div class="t-title3">New collection</div><button class="btn btn-icon btn-gray btn-sm" data-close aria-label="Close"><i data-i="x" class="size-4"></i></button></div>
+  <div class="mt-4 space-y-3"><input class="field" placeholder="Name"><textarea class="field" placeholder="Description"></textarea><label class="flex items-center justify-between">Public<span class="switch"><input type="checkbox"></span></label></div>
+  <div class="mt-5 flex gap-3"><button class="btn btn-gray flex-1" data-close>Cancel</button><button class="btn btn-filled flex-1" data-close>Create</button></div></div></dialog>
+<dialog id="d-sheet" class="sheet"><div class="p-5 pb-8"><div class="sheet-grip -mx-5 -mt-5 px-5 pt-5 pb-3"><div class="mx-auto mb-4 h-1.5 w-10 rounded-full bg-surface2"></div><div class="t-title3">Share</div><p class="t-sub mt-1 text-subtext0">Choose where to send this. Drag here to dismiss.</p></div>
+  <div class="mt-4 grid grid-cols-4 gap-3 text-center t-cap text-subtext1"><div><div class="mx-auto grid size-14 place-items-center rounded-card bg-blue text-crust"><i data-i="message-circle" class="size-6"></i></div><div class="mt-1.5">Message</div></div><div><div class="mx-auto grid size-14 place-items-center rounded-card bg-green text-crust"><i data-i="mail" class="size-6"></i></div><div class="mt-1.5">Mail</div></div><div><div class="mx-auto grid size-14 place-items-center rounded-card bg-peach text-crust"><i data-i="copy" class="size-6"></i></div><div class="mt-1.5">Copy</div></div><div><div class="mx-auto grid size-14 place-items-center rounded-card bg-mauve text-crust"><i data-i="download" class="size-6"></i></div><div class="mt-1.5">Save</div></div></div>
+  <button class="btn btn-gray btn-block mt-5" data-close>Done</button></div></dialog>
+<dialog id="d-action" class="sheet !bg-transparent !shadow-none"><div class="space-y-2 p-2 pb-4"><div class="overflow-hidden rounded-card bg-base text-center"><div class="t-foot p-3 text-subtext0">Photo options</div>
+  <button class="h-12 w-full border-t border-surface0 text-[18px] text-accent" data-close>Take photo</button><button class="h-12 w-full border-t border-surface0 text-[18px] text-accent" data-close>Choose from library</button><button class="h-12 w-full border-t border-surface0 text-[18px] text-red" data-close>Remove photo</button></div>
+  <button class="h-12 w-full rounded-card bg-base text-[18px] font-semibold text-accent" data-close>Cancel</button></div></dialog>
+
+<div id="m1" popover class="menu">
+  <button class="menu-item" data-menu-close><i data-i="pencil" class="size-5 text-subtext0"></i>Edit</button><button class="menu-item" data-menu-close><i data-i="copy" class="size-5 text-subtext0"></i>Duplicate</button><button class="menu-item" data-menu-close><i data-i="share" class="size-5 text-subtext0"></i>Share</button>
+  <div class="menu-sep"></div><button class="menu-item text-red" data-menu-close><i data-i="trash-2" class="size-5"></i>Delete</button></div>
+<div id="toasts" class="pointer-events-none fixed inset-x-0 top-16 z-50 flex flex-col items-center gap-2"></div>
+
+<script>window.UI_SPRITE="../icons.svg";</script>
+<script src="../ui.js"></script>
+<script src="gallery.js"></script>
+</body>
+</html>
